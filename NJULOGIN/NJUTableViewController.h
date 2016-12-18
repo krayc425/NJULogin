@@ -13,6 +13,6 @@
 @property (nonnull, nonatomic) IBOutlet UITextField *usernameText;
 @property (nonnull, nonatomic) IBOutlet UITextField *passwordText;
 @property (nonnull, nonatomic) IBOutlet UISwitch *autologinSwitch;
-@property (assign, nonatomic) IBOutlet UIButton *actionButton;
+@property (nonnull, nonatomic) IBOutlet UIButton *actionButton;
 
 @end

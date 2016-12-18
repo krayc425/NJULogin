@@ -28,7 +28,6 @@
         <!--NJUTableViewController-->
         <scene sceneID="rn5-NG-vUX">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oL0-U2-xCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="d0E-ce-mD7" userLabel="NJUTableViewController" customClass="NJUTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Fpd-ge-0if">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -42,7 +41,7 @@
                                         <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KTi-ee-abY" id="MCc-zd-eZk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-qr-nJG">
@@ -73,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="79" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jgk-Ma-J0j" id="Gp8-jG-BS1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFH-Za-4Ss">
@@ -104,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="123" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="okK-Vz-WpG" id="Cfo-f4-yvP">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自动登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sg2-2X-9lm">
@@ -133,28 +132,22 @@
                                         <rect key="frame" x="0.0" y="203" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="twx-KS-cpp" id="MC3-EK-qXc">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHO-Sb-9hy">
-                                                    <rect key="frame" x="168.5" y="7" width="38" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xC1-9H-oEr">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                                     <state key="normal" title="Login"/>
                                                     <connections>
-                                                        <action selector="buttonAction:" destination="d0E-ce-mD7" eventType="touchUpInside" id="vbU-Kf-xbC"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUV-RY-W2L">
-                                                    <rect key="frame" x="250" y="6" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Logout"/>
-                                                    <connections>
-                                                        <action selector="logoutAction:" destination="d0E-ce-mD7" eventType="touchUpInside" id="iLb-Oq-oll"/>
+                                                        <action selector="buttonAction:" destination="d0E-ce-mD7" eventType="touchUpInside" id="Ma1-vP-3SF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="NHO-Sb-9hy" firstAttribute="centerY" secondItem="MC3-EK-qXc" secondAttribute="centerY" id="uQL-oK-jYA"/>
-                                                <constraint firstItem="NHO-Sb-9hy" firstAttribute="centerX" secondItem="MC3-EK-qXc" secondAttribute="centerX" id="yci-F7-Vzd"/>
+                                                <constraint firstAttribute="trailing" secondItem="xC1-9H-oEr" secondAttribute="trailing" id="3TU-Lm-KaU"/>
+                                                <constraint firstItem="xC1-9H-oEr" firstAttribute="top" secondItem="MC3-EK-qXc" secondAttribute="top" id="MSV-VP-TaD"/>
+                                                <constraint firstItem="xC1-9H-oEr" firstAttribute="leading" secondItem="MC3-EK-qXc" secondAttribute="leading" id="mwT-R4-L6B"/>
+                                                <constraint firstAttribute="bottom" secondItem="xC1-9H-oEr" secondAttribute="bottom" id="w5c-zO-5uX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -168,12 +161,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="NJU LOGIN" id="HRf-Ct-876"/>
                     <connections>
-                        <outlet property="actionButton" destination="NHO-Sb-9hy" id="sTf-vK-Uod"/>
+                        <outlet property="actionButton" destination="xC1-9H-oEr" id="k2B-zn-jIQ"/>
                         <outlet property="autologinSwitch" destination="hFe-Xp-a0j" id="1H5-6F-sCl"/>
                         <outlet property="passwordText" destination="8II-MM-hWK" id="Ilo-NU-vQj"/>
                         <outlet property="usernameText" destination="h00-9p-ikb" id="PXf-nX-juH"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oL0-U2-xCj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="794" y="166"/>
         </scene>

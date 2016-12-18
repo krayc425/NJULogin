@@ -39,10 +39,7 @@
 //        [alertC addAction:okAction];
 //        [self presentViewController:alertC animated:YES completion:nil];
 //    }
-}
-
-- (void)reloadTableView{
-//    [self checkStatus];
+    [self checkStatus];
 }
 
 - (void)checkStatus{
@@ -63,14 +60,12 @@
               
               NSDictionary *resultDict = (NSDictionary *)responseObject;
               
-              NSLog(@"%d", [resultDict[@"reply_code"] intValue]);
-              
               switch ([resultDict[@"reply_code"] intValue]) {
                   case 2:
-                      [self.actionButton.titleLabel setText: @"Login"];
+                      [self.actionButton setTitle:@"Login" forState:UIControlStateNormal];
                       break;
                   case 0:
-                      [self.actionButton.titleLabel setText: @"Logout"];
+                      [self.actionButton setTitle:@"Logout" forState:UIControlStateNormal];
                       break;
                   default:
                       break;
@@ -107,23 +102,16 @@
           success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
               
               NSDictionary *resultDict = (NSDictionary *)responseObject;
-              
-//              for(NSString *key in resultDict){
-//                  NSLog(@"key   : %@", key);
-//                  NSLog(@"value : %@", resultDict[key]);
-              //              }
-              [self checkStatus];
-
-              
               UIAlertController *alertC = [UIAlertController alertControllerWithTitle:resultDict[@"reply_msg"]
                                                                               message:nil
                                                                        preferredStyle:UIAlertControllerStyleAlert];
               UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                  style:UIAlertActionStyleDefault
-                                                               handler:nil];
+                                                               handler:^(UIAlertAction *action){
+                                                                   [self checkStatus];
+                                                               }];
               [alertC addAction:okAction];
               [self presentViewController:alertC animated:YES completion:nil];
-              
               
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -145,20 +133,15 @@
           success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
               
               NSDictionary *resultDict = (NSDictionary *)responseObject;
-              
-//              for(NSString *key in resultDict){
-//                  NSLog(@"key   : %@", key);
-//                  NSLog(@"value : %@", resultDict[key]);
-              //              }
-              [self checkStatus];
 
-              
               UIAlertController *alertC = [UIAlertController alertControllerWithTitle:resultDict[@"reply_msg"]
                                                                               message:nil
                                                                        preferredStyle:UIAlertControllerStyleAlert];
               UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                                  style:UIAlertActionStyleDefault
-                                                               handler:nil];
+                                                               handler:^(UIAlertAction *action){
+                                                                   [self checkStatus];
+                                                               }];
               [alertC addAction:okAction];
               [self presentViewController:alertC animated:YES completion:nil];
               
@@ -169,15 +152,11 @@
 }
 
 - (IBAction)buttonAction:(id)sender{
-    if([self.actionButton.titleLabel.text isEqualToString:@"Login"]){
+    if([self.actionButton.currentTitle isEqualToString:@"Login"]){
         [self login];
     }else{
         [self logout];
     }
-}
-
-- (IBAction)logoutAction:(id)sender{
-    [self logout];
 }
 
 #pragma mark - Table view data source
