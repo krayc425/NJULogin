@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		245453461E066DA7006C22FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 245453451E066DA7006C22FC /* main.m */; };
+		245453491E066DA7006C22FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 245453481E066DA7006C22FC /* AppDelegate.m */; };
+		2454534F1E066DA7006C22FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2454534D1E066DA7006C22FC /* Main.storyboard */; };
+		245453511E066DA7006C22FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245453501E066DA7006C22FC /* Assets.xcassets */; };
+		245453541E066DA7006C22FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245453521E066DA7006C22FC /* LaunchScreen.storyboard */; };
+		2454535D1E067B34006C22FC /* NJUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2454535C1E067B34006C22FC /* NJUTableViewController.m */; };
+		245453601E067DCF006C22FC /* CANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2454535F1E067DCF006C22FC /* CANetworkManager.m */; };
+		A407936B1A449A8CE6E447A4 /* libPods-NJULOGIN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C1447D92492ED1C7B2C04C /* libPods-NJULOGIN.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1802A7DA2E9931D969006880 /* Pods-NJULOGIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJULOGIN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJULOGIN/Pods-NJULOGIN.debug.xcconfig"; sourceTree = "<group>"; };
+		245453411E066DA7006C22FC /* NJULOGIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJULOGIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		245453451E066DA7006C22FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		245453471E066DA7006C22FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		245453481E066DA7006C22FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2454534E1E066DA7006C22FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		245453501E066DA7006C22FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		245453531E066DA7006C22FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		245453551E066DA7006C22FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2454535B1E067B34006C22FC /* NJUTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUTableViewController.h; sourceTree = "<group>"; };
+		2454535C1E067B34006C22FC /* NJUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUTableViewController.m; sourceTree = "<group>"; };
+		2454535E1E067DCF006C22FC /* CANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANetworkManager.h; sourceTree = "<group>"; };
+		2454535F1E067DCF006C22FC /* CANetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANetworkManager.m; sourceTree = "<group>"; };
+		CE246C44A5E9F18707A719D5 /* Pods-NJULOGIN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJULOGIN.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJULOGIN/Pods-NJULOGIN.release.xcconfig"; sourceTree = "<group>"; };
+		D1C1447D92492ED1C7B2C04C /* libPods-NJULOGIN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NJULOGIN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2454533E1E066DA7006C22FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A407936B1A449A8CE6E447A4 /* libPods-NJULOGIN.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		245453381E066DA7006C22FC = {
+			isa = PBXGroup;
+			children = (
+				245453431E066DA7006C22FC /* NJULOGIN */,
+				245453421E066DA7006C22FC /* Products */,
+				B380EEBD47CC17EFB1200378 /* Pods */,
+				687FCD9CEE2CCD49404BBDFF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		245453421E066DA7006C22FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				245453411E066DA7006C22FC /* NJULOGIN.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		245453431E066DA7006C22FC /* NJULOGIN */ = {
+			isa = PBXGroup;
+			children = (
+				245453471E066DA7006C22FC /* AppDelegate.h */,
+				245453481E066DA7006C22FC /* AppDelegate.m */,
+				2454535E1E067DCF006C22FC /* CANetworkManager.h */,
+				2454535F1E067DCF006C22FC /* CANetworkManager.m */,
+				2454535B1E067B34006C22FC /* NJUTableViewController.h */,
+				2454535C1E067B34006C22FC /* NJUTableViewController.m */,
+				2454534D1E066DA7006C22FC /* Main.storyboard */,
+				245453501E066DA7006C22FC /* Assets.xcassets */,
+				245453521E066DA7006C22FC /* LaunchScreen.storyboard */,
+				245453551E066DA7006C22FC /* Info.plist */,
+				245453441E066DA7006C22FC /* Supporting Files */,
+			);
+			path = NJULOGIN;
+			sourceTree = "<group>";
+		};
+		245453441E066DA7006C22FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				245453451E066DA7006C22FC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		687FCD9CEE2CCD49404BBDFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1C1447D92492ED1C7B2C04C /* libPods-NJULOGIN.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B380EEBD47CC17EFB1200378 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1802A7DA2E9931D969006880 /* Pods-NJULOGIN.debug.xcconfig */,
+				CE246C44A5E9F18707A719D5 /* Pods-NJULOGIN.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		245453401E066DA7006C22FC /* NJULOGIN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 245453581E066DA7006C22FC /* Build configuration list for PBXNativeTarget "NJULOGIN" */;
+			buildPhases = (
+				1D501BE5F304B2FE0E1DC4E1 /* [CP] Check Pods Manifest.lock */,
+				2454533D1E066DA7006C22FC /* Sources */,
+				2454533E1E066DA7006C22FC /* Frameworks */,
+				2454533F1E066DA7006C22FC /* Resources */,
+				E2F51138FBB30B4D13B6BEDA /* [CP] Embed Pods Frameworks */,
+				74BF6B311C4923DB22516919 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NJULOGIN;
+			productName = NJULOGIN;
+			productReference = 245453411E066DA7006C22FC /* NJULOGIN.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		245453391E066DA7006C22FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "宋 奎熹";
+				TargetAttributes = {
+					245453401E066DA7006C22FC = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = VEBQ28K9EA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2454533C1E066DA7006C22FC /* Build configuration list for PBXProject "NJULOGIN" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 245453381E066DA7006C22FC;
+			productRefGroup = 245453421E066DA7006C22FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				245453401E066DA7006C22FC /* NJULOGIN */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2454533F1E066DA7006C22FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245453541E066DA7006C22FC /* LaunchScreen.storyboard in Resources */,
+				245453511E066DA7006C22FC /* Assets.xcassets in Resources */,
+				2454534F1E066DA7006C22FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D501BE5F304B2FE0E1DC4E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74BF6B311C4923DB22516919 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJULOGIN/Pods-NJULOGIN-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2F51138FBB30B4D13B6BEDA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NJULOGIN/Pods-NJULOGIN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2454533D1E066DA7006C22FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				245453491E066DA7006C22FC /* AppDelegate.m in Sources */,
+				245453461E066DA7006C22FC /* main.m in Sources */,
+				245453601E067DCF006C22FC /* CANetworkManager.m in Sources */,
+				2454535D1E067B34006C22FC /* NJUTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2454534D1E066DA7006C22FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2454534E1E066DA7006C22FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		245453521E066DA7006C22FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				245453531E066DA7006C22FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		245453561E066DA7006C22FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		245453571E066DA7006C22FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		245453591E066DA7006C22FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1802A7DA2E9931D969006880 /* Pods-NJULOGIN.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VEBQ28K9EA;
+				INFOPLIST_FILE = NJULOGIN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = krayc.NJULOGIN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2454535A1E066DA7006C22FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE246C44A5E9F18707A719D5 /* Pods-NJULOGIN.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VEBQ28K9EA;
+				INFOPLIST_FILE = NJULOGIN/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = krayc.NJULOGIN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2454533C1E066DA7006C22FC /* Build configuration list for PBXProject "NJULOGIN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				245453561E066DA7006C22FC /* Debug */,
+				245453571E066DA7006C22FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		245453581E066DA7006C22FC /* Build configuration list for PBXNativeTarget "NJULOGIN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				245453591E066DA7006C22FC /* Debug */,
+				2454535A1E066DA7006C22FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 245453391E066DA7006C22FC /* Project object */;
+}
