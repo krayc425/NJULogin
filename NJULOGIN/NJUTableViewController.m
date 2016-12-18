@@ -28,30 +28,12 @@
                    forControlEvents:UIControlEventValueChanged];
     
     [self.autologinSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"]];
-    
-    if(self.autologinSwitch.isOn && [self.actionButton.currentTitle isEqualToString:@"Login"]){
-//        while(![self.actionButton.currentTitle isEqualToString:@"Logout"]){
-            [self login];
-//        }
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    if(self.autologinSwitch.isOn){
+        [self login];
     }
-    
-//    [[CANetworkManager shareInstance] checkNetwork];
-    
-//    if([[NSUserDefaults standardUserDefaults] boolForKey:@"IS_CONNECT"]){
-//        [self reloadTableView];
-//    }else{
-//        UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"尚未连接校园网"
-//                                                                        message:nil
-//                                                                 preferredStyle:UIAlertControllerStyleAlert];
-//        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-//                                                           style:UIAlertActionStyleDefault
-//                                                         handler:^(UIAlertAction *action){
-//                                                             [self.navigationController popToRootViewControllerAnimated:YES];
-//                                                         }];
-//        [alertC addAction:okAction];
-//        [self presentViewController:alertC animated:YES completion:nil];
-//    }
-    [self checkStatus];
 }
 
 - (void)checkStatus{
@@ -96,8 +78,6 @@
                               @"username" : [NSString stringWithString:self.usernameText.text],
                               @"password" : [NSString stringWithString:self.passwordText.text],
                               };
-    
-//    NSLog(@"%@", [tmpDict description]);
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     

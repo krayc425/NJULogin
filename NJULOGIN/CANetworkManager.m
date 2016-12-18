@@ -41,6 +41,11 @@ static CANetworkManager* _instance = nil;
 
 #pragma mark - NETWORK UTILITIES
 
+- (BOOL)check{
+    Reachability *r = [Reachability reachabilityWithHostName:TEST_URL];
+    return r.isReachable;
+}
+
 - (void)checkNetwork{
     Reachability *reach = [Reachability reachabilityWithHostName:TEST_URL];
     [[NSNotificationCenter defaultCenter] addObserver:self

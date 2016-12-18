@@ -12,6 +12,7 @@
 
 + (_Nonnull instancetype)shareInstance;
 
+- (BOOL)check;
 - (void)checkNetwork;
 
 @end
