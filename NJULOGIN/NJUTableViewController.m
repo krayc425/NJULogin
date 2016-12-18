@@ -23,6 +23,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.autologinSwitch addTarget:self
+                             action:@selector(setAutoLogin:)
+                   forControlEvents:UIControlEventValueChanged];
+    
+    [self.autologinSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"]];
+    
+    if(self.autologinSwitch.isOn && [self.actionButton.currentTitle isEqualToString:@"Login"]){
+//        while(![self.actionButton.currentTitle isEqualToString:@"Logout"]){
+            [self login];
+//        }
+    }
+    
 //    [[CANetworkManager shareInstance] checkNetwork];
     
 //    if([[NSUserDefaults standardUserDefaults] boolForKey:@"IS_CONNECT"]){
@@ -77,7 +89,6 @@
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               NSLog(@"%@",error);
           }];
-
 }
 
 - (void)login{
@@ -157,6 +168,11 @@
     }else{
         [self logout];
     }
+}
+
+- (void)setAutoLogin:(id)sender{
+    UISwitch *s = (UISwitch *)sender;
+    [[NSUserDefaults standardUserDefaults] setBool:[s isOn] forKey:@"AUTO_LOGIN"];
 }
 
 #pragma mark - Table view data source
