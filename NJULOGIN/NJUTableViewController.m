@@ -14,7 +14,9 @@
 #define LOGOUT_URL @"http://p.nju.edu.cn/portal_io/logout"
 #define CHECK_STATUS_URL @"http://p.nju.edu.cn/portal_io/getinfo"
 
-@interface NJUTableViewController ()
+@interface NJUTableViewController (){
+    Boolean isConnected;
+}
 
 @end
 
@@ -28,12 +30,27 @@
                    forControlEvents:UIControlEventValueChanged];
     
     [self.autologinSwitch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"]];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(checkConnection:)
+                                                 name:@"connection"
+                                               object:nil];
+    
+    NSString *username = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
+    self.usernameText.text = username;
+    NSString *password = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"password"];
+    self.passwordText.text = password;
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     if(self.autologinSwitch.isOn){
         [self login];
     }
+}
+
+- (void)checkConnection:(NSNotification *)notification{
+    isConnected = (Boolean)[notification object];
+    NSLog(@"Is connected: %d", isConnected);
 }
 
 - (void)checkStatus{
@@ -91,6 +108,9 @@
        parameters:tmpDict
          progress:nil
           success:^(NSURLSessionDataTask * _Nonnull task, id _Nullable responseObject) {
+              
+              [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithString:self.usernameText.text] forKey:@"username"];
+              [[NSUserDefaults standardUserDefaults] setValue:[NSString stringWithString:self.passwordText.text] forKey:@"password"];
               
               NSDictionary *resultDict = (NSDictionary *)responseObject;
               UIAlertController *alertC = [UIAlertController alertControllerWithTitle:resultDict[@"reply_msg"]
@@ -169,6 +189,20 @@
             return 1;
         default:
             return 0;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(!isConnected){
+        
+    }else{
+        if(indexPath.section == 1 && indexPath.row == 0){
+            if([self.actionButton.currentTitle isEqualToString:@"Login"]){
+                [self login];
+            }else{
+                [self logout];
+            }
+        }
     }
 }
 

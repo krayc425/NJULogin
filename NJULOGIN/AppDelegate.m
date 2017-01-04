@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NJUTableViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     return YES;
 }
 
@@ -47,5 +49,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - Homepage 3D Touch
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler{
+    if([shortcutItem.type isEqualToString:@"login"]){
+        UINavigationController *naviVC = (UINavigationController *)self.window.rootViewController;
+        NJUTableViewController *tvc = (NJUTableViewController *)naviVC.viewControllers[0];
+        [tvc login];
+    }else if([shortcutItem.type isEqualToString:@"logout"]){
+        UINavigationController *naviVC = (UINavigationController *)self.window.rootViewController;
+        NJUTableViewController *tvc = (NJUTableViewController *)naviVC.viewControllers[0];
+        [tvc logout];
+    }
+}
 
 @end

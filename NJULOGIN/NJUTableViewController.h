@@ -15,4 +15,7 @@
 @property (nonnull, nonatomic) IBOutlet UISwitch *autologinSwitch;
 @property (nonnull, nonatomic) IBOutlet UIButton *actionButton;
 
+- (void)login;
+- (void)logout;
+
 @end

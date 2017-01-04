@@ -68,6 +68,9 @@ static CANetworkManager* _instance = nil;
             isConnected = YES;
         }
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"connection" object:[NSNumber numberWithBool:isConnected]];
+    
     [[NSUserDefaults standardUserDefaults] setBool:isConnected forKey:@"ISCONNECTED"];
 }
 
