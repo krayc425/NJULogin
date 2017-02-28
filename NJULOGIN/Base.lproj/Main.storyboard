@@ -83,7 +83,7 @@
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoq-kX-PDU">
                                         <rect key="frame" x="0.0" y="270" width="335" height="41"/>
-                                        <string key="text">*IF YOU TURN THIS SWITCH ON, NEXT TIME WHEN YOU LAUNCH THIS APP, IT WILL LOGIN AUTOMATICALLY AND YOU DON'T NEED TO PRESS THE BUTTON.</string>
+                                        <string key="text">*IF YOU TURN THIS SWITCH ON, NEXT TIME WHEN YOU OPEN THIS APP, IT WILL LOGIN AUTOMATICALLY AND YOU DON'T NEED TO PRESS THE BUTTON.</string>
                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="10"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>

@@ -71,11 +71,6 @@ typedef NS_ENUM(NSInteger, LogStatus){
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self.actionButton setDisabledButtonColor:[UIColor lightGrayColor]];
-    [self.actionButton setDisabledShadowColor:[UIColor grayColor]];
-    [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
-    self.actionButton.enabled = NO;
-    
     [self setNetwork];
     
     [self checkStatus];
@@ -125,14 +120,7 @@ typedef NS_ENUM(NSInteger, LogStatus){
         }
     }
     
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:statusString
-//                                                                   message:nil
-//                                                            preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-//                                                       style:UIAlertActionStyleDefault
-//                                                     handler:nil];
-//    [alert addAction:okAction];
-//    [self presentViewController:alert animated:YES completion:nil];
+    [self checkStatus];
     
     if (connectionRequired){
         NSString *connectionRequiredFormatString = NSLocalizedString(@"%@, Connection Required", @"Concatenation of status string with connection requirement");
@@ -145,6 +133,11 @@ typedef NS_ENUM(NSInteger, LogStatus){
 #pragma mark - Actions;
 
 - (void)checkStatus{
+    
+    [self.actionButton setDisabledButtonColor:[UIColor lightGrayColor]];
+    [self.actionButton setDisabledShadowColor:[UIColor grayColor]];
+    [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
+    self.actionButton.enabled = NO;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -270,6 +263,17 @@ typedef NS_ENUM(NSInteger, LogStatus){
               
           }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               NSLog(@"%@",error);
+              
+              UIAlertController *alertC = [UIAlertController alertControllerWithTitle:error.description
+                                                                              message:nil
+                                                                       preferredStyle:UIAlertControllerStyleAlert];
+              UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action){
+                                                                   [self checkStatus];
+                                                               }];
+              [alertC addAction:okAction];
+              [self presentViewController:alertC animated:YES completion:nil];
           }];
 }
 

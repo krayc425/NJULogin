@@ -13,6 +13,5 @@ target 'NJULOGIN' do
   pod 'AFNetworking'
   pod 'BEMCheckBox'
   pod 'HTPressableButton'
-  pod 'HTPressableButton/HTColor'
 
 end
