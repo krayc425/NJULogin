@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2433E6D11E65723C00315D5B /* NJULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433E6D01E65723C00315D5B /* NJULoginViewController.m */; };
+		2433E6D41E6572AB00315D5B /* YoshikoTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2433E6D31E6572AB00315D5B /* YoshikoTextField.m */; };
 		245453461E066DA7006C22FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 245453451E066DA7006C22FC /* main.m */; };
 		245453491E066DA7006C22FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 245453481E066DA7006C22FC /* AppDelegate.m */; };
 		2454534F1E066DA7006C22FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2454534D1E066DA7006C22FC /* Main.storyboard */; };
 		245453511E066DA7006C22FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 245453501E066DA7006C22FC /* Assets.xcassets */; };
 		245453541E066DA7006C22FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 245453521E066DA7006C22FC /* LaunchScreen.storyboard */; };
-		2454535D1E067B34006C22FC /* NJUTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2454535C1E067B34006C22FC /* NJUTableViewController.m */; };
-		245453601E067DCF006C22FC /* CANetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2454535F1E067DCF006C22FC /* CANetworkManager.m */; };
 		A407936B1A449A8CE6E447A4 /* libPods-NJULOGIN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C1447D92492ED1C7B2C04C /* libPods-NJULOGIN.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1802A7DA2E9931D969006880 /* Pods-NJULOGIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJULOGIN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NJULOGIN/Pods-NJULOGIN.debug.xcconfig"; sourceTree = "<group>"; };
+		2433E6CF1E65723C00315D5B /* NJULoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJULoginViewController.h; sourceTree = "<group>"; };
+		2433E6D01E65723C00315D5B /* NJULoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJULoginViewController.m; sourceTree = "<group>"; };
+		2433E6D21E6572AB00315D5B /* YoshikoTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoshikoTextField.h; sourceTree = "<group>"; };
+		2433E6D31E6572AB00315D5B /* YoshikoTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoshikoTextField.m; sourceTree = "<group>"; };
 		245453411E066DA7006C22FC /* NJULOGIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJULOGIN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		245453451E066DA7006C22FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		245453471E066DA7006C22FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -27,10 +31,6 @@
 		245453501E066DA7006C22FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		245453531E066DA7006C22FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		245453551E066DA7006C22FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2454535B1E067B34006C22FC /* NJUTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJUTableViewController.h; sourceTree = "<group>"; };
-		2454535C1E067B34006C22FC /* NJUTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJUTableViewController.m; sourceTree = "<group>"; };
-		2454535E1E067DCF006C22FC /* CANetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CANetworkManager.h; sourceTree = "<group>"; };
-		2454535F1E067DCF006C22FC /* CANetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CANetworkManager.m; sourceTree = "<group>"; };
 		CE246C44A5E9F18707A719D5 /* Pods-NJULOGIN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NJULOGIN.release.xcconfig"; path = "Pods/Target Support Files/Pods-NJULOGIN/Pods-NJULOGIN.release.xcconfig"; sourceTree = "<group>"; };
 		D1C1447D92492ED1C7B2C04C /* libPods-NJULOGIN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NJULOGIN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -70,10 +70,10 @@
 			children = (
 				245453471E066DA7006C22FC /* AppDelegate.h */,
 				245453481E066DA7006C22FC /* AppDelegate.m */,
-				2454535E1E067DCF006C22FC /* CANetworkManager.h */,
-				2454535F1E067DCF006C22FC /* CANetworkManager.m */,
-				2454535B1E067B34006C22FC /* NJUTableViewController.h */,
-				2454535C1E067B34006C22FC /* NJUTableViewController.m */,
+				2433E6D21E6572AB00315D5B /* YoshikoTextField.h */,
+				2433E6D31E6572AB00315D5B /* YoshikoTextField.m */,
+				2433E6CF1E65723C00315D5B /* NJULoginViewController.h */,
+				2433E6D01E65723C00315D5B /* NJULoginViewController.m */,
 				2454534D1E066DA7006C22FC /* Main.storyboard */,
 				245453501E066DA7006C22FC /* Assets.xcassets */,
 				245453521E066DA7006C22FC /* LaunchScreen.storyboard */,
@@ -231,10 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2433E6D41E6572AB00315D5B /* YoshikoTextField.m in Sources */,
+				2433E6D11E65723C00315D5B /* NJULoginViewController.m in Sources */,
 				245453491E066DA7006C22FC /* AppDelegate.m in Sources */,
 				245453461E066DA7006C22FC /* main.m in Sources */,
-				245453601E067DCF006C22FC /* CANetworkManager.m in Sources */,
-				2454535D1E067B34006C22FC /* NJUTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

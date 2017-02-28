@@ -9,12 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JSONKit.xcscheme</key>
+		<key>BEMCheckBox.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
+		<key>HTPressableButton.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,22 +32,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
+		<key>107FC511B01CDA14F01A7A647152DEB8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AB34BCC2A5390C2CD01D674EE1EBAC0</key>
+		<key>5D60996A6BD85485487B2609F85A026F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7B49B4182937B454CA81C03EAAAEB70D</key>
+		<key>7951E150B2E673E5C8E41DC28A5ADBD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7F4D12D5654F9C990359CA8A481B905D</key>
+		<key>98936157BA5937076DD7B0E41F6DBD2C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

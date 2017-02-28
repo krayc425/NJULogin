@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7B49B4182937B454CA81C03EAAAEB70D'
+               BlueprintIdentifier = '5D60996A6BD85485487B2609F85A026F'
                BlueprintName = 'Pods-NJULOGIN'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-NJULOGIN.a'>

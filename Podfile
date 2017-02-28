@@ -9,9 +9,10 @@ target 'NJULOGIN' do
 
   # Pods for NJULOGIN
   
-  pod 'JSONKit'
   pod 'Reachability'
   pod 'AFNetworking'
-  pod ‘MBProgressHUD’
+  pod 'BEMCheckBox'
+  pod 'HTPressableButton'
+  pod 'HTPressableButton/HTColor'
 
 end
