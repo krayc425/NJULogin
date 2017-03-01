@@ -20,6 +20,7 @@
 @property (nonnull, nonatomic) IBOutlet YoshikoTextField *passwordText;
 @property (nonnull, nonatomic) IBOutlet BEMCheckBox *autologinBox;
 
+- (void)checkStatus;
 - (void)login;
 - (void)logout;
 

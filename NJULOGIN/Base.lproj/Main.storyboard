@@ -38,44 +38,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HB8-v7-NhZ">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HB8-v7-NhZ">
                                 <rect key="frame" x="20" y="40" width="335" height="311"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ACCOUNT" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ab8-RH-Izm" customClass="YoshikoTextField">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="80" id="34i-Pl-k0J"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="w8r-qA-v7N"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3C-vL-PXJ" customClass="YoshikoTextField">
-                                        <rect key="frame" x="0.0" y="100" width="335" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="LSD-U4-3zc"/>
-                                            <constraint firstAttribute="height" constant="80" id="ogY-tc-yJJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" secureTextEntry="YES"/>
-                                    </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gJT-ga-SXV">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="180"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="ACCOUNT" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ab8-RH-Izm" customClass="YoshikoTextField">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="34i-Pl-k0J"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="w8r-qA-v7N"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="PASSWORD" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J3C-vL-PXJ" customClass="YoshikoTextField">
+                                                <rect key="frame" x="0.0" y="100" width="335" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="LSD-U4-3zc"/>
+                                                    <constraint firstAttribute="height" constant="80" id="ogY-tc-yJJ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="2KU-eF-mNJ">
-                                        <rect key="frame" x="0.0" y="200" width="335" height="50"/>
+                                        <rect key="frame" x="0.0" y="210" width="335" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTO LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GC2-h2-qFg">
-                                                <rect key="frame" x="0.0" y="0.0" width="137" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="137" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Vix-In-oDF"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Vix-In-oDF"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-4i-vpj" customClass="BEMCheckBox">
-                                                <rect key="frame" x="285" y="0.0" width="50" height="50"/>
+                                                <rect key="frame" x="305" y="0.0" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="57f-I2-bcK"/>
                                                     <constraint firstAttribute="width" secondItem="Cjb-4i-vpj" secondAttribute="height" multiplier="1:1" id="ra6-QD-l7n"/>
                                                 </constraints>
                                             </view>

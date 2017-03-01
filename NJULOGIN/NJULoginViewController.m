@@ -24,7 +24,8 @@
 
 typedef NS_ENUM(NSInteger, LogStatus){
     Login = 0,
-    Logout
+    Logout,
+    LogDisabled
 };
 
 @interface NJULoginViewController () <BEMCheckBoxDelegate>
@@ -64,6 +65,8 @@ typedef NS_ENUM(NSInteger, LogStatus){
     [self.actionButton setStyle:HTPressableButtonStyleCircular];
     [self.actionButton addTarget:self action:@selector(logAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.actionButton];
+    
+    [self setNetwork];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,8 +74,6 @@ typedef NS_ENUM(NSInteger, LogStatus){
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [self setNetwork];
-    
     [self checkStatus];
 }
 
@@ -130,14 +131,10 @@ typedef NS_ENUM(NSInteger, LogStatus){
     NSLog(@"connection status = [%@]",statusString);
 }
 
-#pragma mark - Actions;
-
 - (void)checkStatus{
     
-    [self.actionButton setDisabledButtonColor:[UIColor lightGrayColor]];
-    [self.actionButton setDisabledShadowColor:[UIColor grayColor]];
-    [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
-    self.actionButton.enabled = NO;
+    self.logStatus = LogDisabled;
+    [self refreshActionButton];
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
@@ -156,33 +153,68 @@ typedef NS_ENUM(NSInteger, LogStatus){
               switch ([resultDict[@"reply_code"] intValue]) {
                   case 2:
                   {
-                      [self.actionButton setTitle:@"LOGIN" forState:UIControlStateNormal];
-                      self.actionButton.buttonColor = [UIColor ht_mintColor];
-                      self.actionButton.shadowColor = [UIColor ht_mintDarkColor];
-                      self.actionButton.enabled = YES;
                       self.logStatus = Logout;
                   }
                       break;
                   case 0:
                   {
-                      [self.actionButton setTitle:@"LOGOUT" forState:UIControlStateNormal];
-                      self.actionButton.buttonColor = [UIColor ht_grapeFruitColor];
-                      self.actionButton.shadowColor = [UIColor ht_grapeFruitDarkColor];
-                      self.actionButton.enabled = YES;
                       self.logStatus = Login;
                   }
                       break;
                   default:
+                  {
+                      self.logStatus = LogDisabled;
+                  }
                       break;
               }
+              
+              [self refreshActionButton];
               
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
               NSLog(@"%@",error);
           }];
+    
 }
 
+- (void)refreshActionButton{
+    switch (self.logStatus) {
+        case LogDisabled:
+        {
+            [self.actionButton setDisabledButtonColor:[UIColor lightGrayColor]];
+            [self.actionButton setDisabledShadowColor:[UIColor grayColor]];
+            [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
+            self.actionButton.enabled = NO;
+        }
+            break;
+        case Login:
+        {
+            [self.actionButton setTitle:@"LOGOUT" forState:UIControlStateNormal];
+            self.actionButton.buttonColor = [UIColor ht_grapeFruitColor];
+            self.actionButton.shadowColor = [UIColor ht_grapeFruitDarkColor];
+            self.actionButton.enabled = YES;
+        }
+            break;
+        case Logout:
+        {
+            [self.actionButton setTitle:@"LOGIN" forState:UIControlStateNormal];
+            self.actionButton.buttonColor = [UIColor ht_mintColor];
+            self.actionButton.shadowColor = [UIColor ht_mintDarkColor];
+            self.actionButton.enabled = YES;
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - Actions;
+
 - (void)login{
+    
+    if(self.logStatus == LogDisabled){
+        return;
+    }
     
     NSDictionary *tmpDict = @{
                               @"username" : [NSString stringWithString:self.usernameText.text],
@@ -219,7 +251,6 @@ typedef NS_ENUM(NSInteger, LogStatus){
               [self presentViewController:alertC animated:YES completion:nil];
               
           }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              NSLog(@"%@",error);
               
               UIAlertController *alertC = [UIAlertController alertControllerWithTitle:error.description
                                                                               message:nil
@@ -236,6 +267,11 @@ typedef NS_ENUM(NSInteger, LogStatus){
 }
 
 - (void)logout{
+    
+    if(self.logStatus == LogDisabled){
+        return;
+    }
+    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
@@ -262,7 +298,6 @@ typedef NS_ENUM(NSInteger, LogStatus){
               [self presentViewController:alertC animated:YES completion:nil];
               
           }failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-              NSLog(@"%@",error);
               
               UIAlertController *alertC = [UIAlertController alertControllerWithTitle:error.description
                                                                               message:nil
@@ -274,6 +309,7 @@ typedef NS_ENUM(NSInteger, LogStatus){
                                                                }];
               [alertC addAction:okAction];
               [self presentViewController:alertC animated:YES completion:nil];
+              
           }];
 }
 

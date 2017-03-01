@@ -55,10 +55,12 @@
     if([shortcutItem.type isEqualToString:@"login"]){
         UINavigationController *naviVC = (UINavigationController *)self.window.rootViewController;
         NJULoginViewController *tvc = (NJULoginViewController *)naviVC.viewControllers[0];
+        [tvc checkStatus];
         [tvc login];
     }else if([shortcutItem.type isEqualToString:@"logout"]){
         UINavigationController *naviVC = (UINavigationController *)self.window.rootViewController;
         NJULoginViewController *tvc = (NJULoginViewController *)naviVC.viewControllers[0];
+        [tvc checkStatus];
         [tvc logout];
     }
 }
