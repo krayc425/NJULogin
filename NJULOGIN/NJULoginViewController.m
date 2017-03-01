@@ -63,6 +63,9 @@ typedef NS_ENUM(NSInteger, LogStatus){
                                                                             150)
                                                      buttonStyle:HTPressableButtonStyleCircular];
     [self.actionButton setStyle:HTPressableButtonStyleCircular];
+    [self.actionButton setDisabledButtonColor:[UIColor lightGrayColor]];
+    [self.actionButton setDisabledShadowColor:[UIColor grayColor]];
+    [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
     [self.actionButton addTarget:self action:@selector(logAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.actionButton];
     
@@ -181,9 +184,6 @@ typedef NS_ENUM(NSInteger, LogStatus){
     switch (self.logStatus) {
         case LogDisabled:
         {
-            [self.actionButton setDisabledButtonColor:[UIColor lightGrayColor]];
-            [self.actionButton setDisabledShadowColor:[UIColor grayColor]];
-            [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
             self.actionButton.enabled = NO;
         }
             break;
