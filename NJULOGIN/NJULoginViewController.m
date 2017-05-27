@@ -36,6 +36,8 @@ typedef NS_ENUM(NSInteger, LogStatus){
 
 @property (nonatomic) NSInteger logStatus;
 
+@property (nonatomic) BOOL isFirstAppear;
+
 @end
 
 @implementation NJULoginViewController
@@ -43,7 +45,7 @@ typedef NS_ENUM(NSInteger, LogStatus){
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.autologinBox setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"]];
+    [self.autologinBox setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"] animated:YES];
     [self.autologinBox setBoxType:BEMBoxTypeSquare];
     [self.autologinBox setOnCheckColor:[UIColor whiteColor]];
     [self.autologinBox setOnFillColor:[UIColor colorWithRed:1.0 green:0.4 blue:0 alpha:1.0]];
@@ -51,6 +53,7 @@ typedef NS_ENUM(NSInteger, LogStatus){
     [self.autologinBox setLineWidth:3.0f];
     [self.autologinBox setOnAnimationType:BEMAnimationTypeBounce];
     [self.autologinBox setOffAnimationType:BEMAnimationTypeBounce];
+    self.autologinBox.delegate = self;
     
     NSString *username = (NSString *)[[NSUserDefaults standardUserDefaults] valueForKey:@"username"];
     self.usernameText.text = username;
@@ -77,12 +80,43 @@ typedef NS_ENUM(NSInteger, LogStatus){
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    self.isFirstAppear = YES;
+    //AUTO LOGIN
     [self checkStatus];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    self.isFirstAppear = NO;
 }
 
 #pragma mark - Network
 
 - (void)setNetwork{
+    
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    
+    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        // 当网络状态改变时调用
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知网络");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"没有网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"手机自带网络");
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WIFI");
+                break;
+        }
+    }];
+    
+    //开始监控
+    [manager startMonitoring];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reachabilityChanged:)
                                                  name:kReachabilityChangedNotification
@@ -137,8 +171,9 @@ typedef NS_ENUM(NSInteger, LogStatus){
 - (void)checkStatus{
     
     self.logStatus = LogDisabled;
-    [self refreshActionButton];
-    
+    self.actionButton.enabled = NO;
+    [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
+
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
@@ -157,21 +192,45 @@ typedef NS_ENUM(NSInteger, LogStatus){
                   case 2:
                   {
                       self.logStatus = Logout;
+                      [self.actionButton setTitle:@"LOGIN" forState:UIControlStateNormal];
+                      self.actionButton.buttonColor = [UIColor ht_mintColor];
+                      self.actionButton.shadowColor = [UIColor ht_mintDarkColor];
+                      self.actionButton.enabled = YES;
+                      
+                      if(self.isFirstAppear){
+                          self.isFirstAppear = NO;
+                          if([[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"]){
+                              [self login];
+                          }
+                      }
+                      
                   }
                       break;
                   case 0:
                   {
                       self.logStatus = Login;
+                      [self.actionButton setTitle:@"LOGOUT" forState:UIControlStateNormal];
+                      self.actionButton.buttonColor = [UIColor ht_grapeFruitColor];
+                      self.actionButton.shadowColor = [UIColor ht_grapeFruitDarkColor];
+                      self.actionButton.enabled = YES;
+                      
+                      if(self.isFirstAppear){
+                          self.isFirstAppear = NO;
+                      }
                   }
                       break;
                   default:
                   {
                       self.logStatus = LogDisabled;
+                      
+                      if(self.isFirstAppear){
+                          self.isFirstAppear = NO;
+                      }
                   }
                       break;
               }
               
-              [self refreshActionButton];
+//              [self refreshActionButton];
               
           }
           failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -184,6 +243,7 @@ typedef NS_ENUM(NSInteger, LogStatus){
     switch (self.logStatus) {
         case LogDisabled:
         {
+            [self.actionButton setTitle:@"DISABLED" forState:UIControlStateNormal];
             self.actionButton.enabled = NO;
         }
             break;
@@ -212,7 +272,9 @@ typedef NS_ENUM(NSInteger, LogStatus){
 
 - (void)login{
     
-    if(self.logStatus == LogDisabled){
+    NSLog(@"status %ld", (long)self.logStatus);
+    
+    if(self.logStatus != Logout){
         return;
     }
     
@@ -268,7 +330,7 @@ typedef NS_ENUM(NSInteger, LogStatus){
 
 - (void)logout{
     
-    if(self.logStatus == LogDisabled){
+    if(self.logStatus != Login){
         return;
     }
     
@@ -325,8 +387,9 @@ typedef NS_ENUM(NSInteger, LogStatus){
 
 - (void)didTapCheckBox:(BEMCheckBox *)checkBox{
     if(checkBox == self.autologinBox){
-        [[NSUserDefaults standardUserDefaults] setBool:[checkBox on] forKey:@"AUTO_LOGIN"];
+        [[NSUserDefaults standardUserDefaults] setBool:[self.autologinBox on] forKey:@"AUTO_LOGIN"];
     }
+    NSLog(@"On ? %d", [[NSUserDefaults standardUserDefaults] boolForKey:@"AUTO_LOGIN"]);
 }
 
 @end
